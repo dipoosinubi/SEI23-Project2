@@ -19,7 +19,7 @@ const UserSchema = mongoose.Schema({
     reuired: true
   },
   profilePicture:{
-    type: string,
+    type: String,
     default:'images/profile.png'
   }
 });

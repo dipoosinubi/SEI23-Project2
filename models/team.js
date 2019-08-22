@@ -2,7 +2,7 @@ const mongoose = require('./connection.js')
 
 const TeamSchema = mongoose.Schema ({
   name: String,
-  leauge: String,
+  league: String,
   country: String,
 });
 
