@@ -2,22 +2,10 @@
 const mongoose = require('./connection.js')
 
 const UserSchema = mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  username: {
-    type: String,
-    // required: true,
-  },
-  location: {
-    type: String,
-    // required: true
-  },
-  Age: {
-    type: Number,
-    // required: true
-  },
+  name: String,
+  username: String,
+  location: String,
+  age: Number,
   profilePicture:{
     type: String,
     default:'images/profile .png'
