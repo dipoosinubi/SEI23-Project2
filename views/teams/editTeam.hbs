@@ -1,4 +1,4 @@
-<form method="POST" action="/users/{{team._id}}?_method=PUT">
+<form method="POST" action="/teams/{{team._id}}?_method=PUT">
 
     <label for="name">Name</label>
     <input type="text" name="name" value="{{team.name}}"/>
@@ -11,6 +11,6 @@
 
      <input type="submit" value="Update Team" />
 </form>
-<form method="POST" action="/users/{{team._id}}?_method=DELETE">
+<form method="POST" action="/teams/{{team._id}}?_method=DELETE">
     <input type="submit" value="Delete Team" />
 </form>

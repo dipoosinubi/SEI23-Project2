@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const teamAPI = require('../models/team.js')
+const teamsAPI = require('../models/team.js')
 
 /* Step 3 
  * 
@@ -32,7 +32,7 @@ const teamRouter = express.Router()
  * TODO: Put all request handlers here
  */
 teamRouter.get('/', function (req, res) {
-  teamAPI.getAllTeams(). then(teams => {
+  teamsAPI.getAllTeams(). then(teams => {
     res.render('teams/allTeams', {teams})
   })
 })
@@ -40,32 +40,32 @@ teamRouter.get('/new', function(req, res) {
   res.render('teams/newTeam')
 })
 teamRouter.get('/:teamId/editTeam', function(req, res) {
-  teamAPI.getTeam(req.params.teamId).then(team => {
+  teamsAPI.getTeam(req.params.teamId).then(team => {
     res.render('teams/editTeam', {team})
   })
 })
  
 teamRouter.get('/:teamId', function(req, res) {
-  teamAPI.getTeam(req.params.teamId).then (team =>{
+  teamsAPI.getTeam(req.params.teamId).then (team =>{
     res.render('teams/team', {team})
   })
 })
 
 teamRouter.post('/', function(req, res){
-  teamAPI.addNewTeam(req.body).then(() => {
+  teamsAPI.addNewTeam(req.body).then(() => {
     res.redirect('/teams');
   })
 })
 
 teamRouter.put('/:teamId', function (req, res){
-  teamAPI.updateUser(req.params.teamId, req.body).then (
+  teamsAPI.updateTeam(req.params.teamId, req.body).then (
     () => {
       res.redirect('/teams');
   })
 })
 
 teamRouter.delete('/:teamId', function(req, res) {
-  teamAPI.deleteUser(req.params.teamId).then(res.redirect('/teams'))
+  teamsAPI.deleteTeam(req.params.teamId).then(res.redirect('/teams'))
 })
 
 

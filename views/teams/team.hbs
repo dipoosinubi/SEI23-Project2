@@ -5,8 +5,8 @@
     <p>Country: </p>{{team.country}}
 </div>
 
-<a href="/team/{{team._id}}/editTeam">Edit Team</a> 
+<a href="/teams/{{team._id}}/editTeam">Edit Team</a> 
 
-<form method="POST" and action="/team/{{team._id}}?_method=DELETE">
+<form method="POST" and action="/teams/{{team._id}}?_method=DELETE">
    <input type="submit" value="Delete Team"/>
 </form>
