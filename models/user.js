@@ -8,15 +8,15 @@ const UserSchema = mongoose.Schema({
   },
   username: {
     type: String,
-    required: true,
+    // required: true,
   },
   location: {
     type: String,
-    required: true
+    // required: true
   },
   Age: {
     type: Number,
-    required: true
+    // required: true
   },
   profilePicture:{
     type: String,
