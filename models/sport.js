@@ -5,24 +5,24 @@ const SportSchema = mongoose.Schema ({
   location: String,
 });
 
-const UserCollection = mongoose.model('user', SportSchema);
+const SportCollection = mongoose.model('sport', SportSchema);
 
 function getAllSports(){
-  return UserCollection.find();
+  return SportCollection.find();
 }
 
 function getSport(sportId){
-  return UserCollection.findById(sportId)
+  return SportCollection.findById(sportId)
 }
 
 function addNewSport(newSport) {
-  return UserCollection.create(newSport)
+  return SportCollection.create(newSport)
 }
  function updateSport(sportId, updatedSport){
-   return UserCollection.updateOne({_id:sportId}, updatedSport)
+   return SportCollection.updateOne({_id:sportId}, updatedSport)
  }
  function deleteSport(sportId) {
-   return UserCollection.findByIdAndDelete(sportId);
+   return SportCollection.findByIdAndDelete(sportId);
  }
 
 /* Step 5
