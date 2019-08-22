@@ -2,10 +2,10 @@
 
 <a href="/users/new">New User</a>
 
-<ul> 
+<div> 
     {{#each users}}
-    <li>
+    <form>
       <a href="/users/{{_id}}">{{name}}</a>
-    </li>
+    </form>
     {{/each}}
-</ul>
+</div>

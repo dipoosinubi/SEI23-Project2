@@ -1,31 +1,44 @@
 
 const mongoose = require('./connection.js')
 
-const UserSchema = mongoose.Schema ({
-  name: String,
-  location: String,
-  Age: Number,
+const UserSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  username: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true
+  },
+  Age: {
+    type: Number,
+    reuired: true
+  }
 });
 
 const UserCollection = mongoose.model('user', UserSchema);
 
-function getAllUsers(){
+function getAllUsers() {
   return UserCollection.find();
 }
 
-function getUser(userId){
+function getUser(userId) {
   return UserCollection.findById(userId)
 }
 
 function addNewUser(newUser) {
   return UserCollection.create(newUser)
 }
- function updateUser(userId, updatedUser){
-   return UserCollection.updateOne({_id:userId}, updatedUser)
- }
- function deleteUser(userId) {
-   return UserCollection.findByIdAndDelete(userId);
- }
+function updateUser(userId, updatedUser) {
+  return UserCollection.updateOne({ _id: userId }, updatedUser)
+}
+function deleteUser(userId) {
+  return UserCollection.findByIdAndDelete(userId);
+}
 
 /* Step 5
  *
