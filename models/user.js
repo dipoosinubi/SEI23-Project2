@@ -16,11 +16,11 @@ const UserSchema = mongoose.Schema({
   },
   Age: {
     type: Number,
-    reuired: true
+    required: true
   },
   profilePicture:{
     type: String,
-    default:'images/profile.png'
+    default:'images/profile .png'
   }
 });
 

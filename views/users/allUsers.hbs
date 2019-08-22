@@ -5,7 +5,10 @@
 <div> 
     {{#each users}}
     <form>
+      {{profilePicture}}
       <a href="/users/{{_id}}">{{name}}</a>
+      {{location}}
+      {{age}}
     </form>
     {{/each}}
 </div>
