@@ -3,7 +3,10 @@ const mongoose = require('./connection.js')
 const TeamSchema = mongoose.Schema ({
   name: String,
   league: String,
+  stadium: String,
   country: String,
+  players: Number,
+
 });
 
 const TeamCollection = mongoose.model('team', TeamSchema);
