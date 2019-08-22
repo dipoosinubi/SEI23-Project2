@@ -1,0 +1,16 @@
+<form method="POST" action="/users/{{team._id}}?_method=PUT">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{team.name}}"/>
+
+    <label for="leauge">League</label>
+    <input type="text" name="leauge" value="{{team.league}}"/>
+
+    <label for="country">Country</label>
+    <input type="text"  name="country" value="{{team.country}}"/>
+
+     <input type="submit" value="Update Team" />
+</form>
+<form method="POST" action="/users/{{team._id}}?_method=DELETE">
+    <input type="submit" value="Delete Team" />
+</form>

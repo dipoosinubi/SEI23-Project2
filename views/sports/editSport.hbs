@@ -1,0 +1,14 @@
+<form method="POST" action="/sports/{{sport._id}}?_method=PUT">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{sport.name}}"/>
+
+    <label for="location">Location</label>
+    <input type="text" name="location" value="{{sport.location}}"/>
+
+
+     <input type="submit" value="Update Sport" />
+</form>
+<form method="POST" action="/sports/{{sport._id}}?_method=DELETE">
+    <input type="submit" value="Delete sports" />
+</form>

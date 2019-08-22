@@ -1,0 +1,11 @@
+<h1>All Teams</h1>
+
+<a href="/teams/new">New Team</a>
+
+<ul> 
+    {{#each teams}}
+    <li>
+      <a href="/teams/{{_id}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ul>

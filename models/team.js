@@ -3,7 +3,7 @@ const mongoose = require('./connection.js')
 const TeamSchema = mongoose.Schema ({
   name: String,
   leauge: String,
-  location: Number,
+  country: String,
 });
 
 const TeamCollection = mongoose.model('team', TeamSchema);
