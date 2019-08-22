@@ -32,39 +32,48 @@ const userRouter = express.Router()
  * TODO: Put all request handlers here
  */
 userRouter.get('/', function (req, res) {
-  usersAPI.getAllUsers(). then(users => {
-    res.render('users/allUsers', {users})
+  usersAPI.getAllUsers().then(users => {
+    res.render('users/allUsers', { users })
   })
 })
-userRouter.get('/new', function(req, res) {
+userRouter.get('/new', function (req, res) {
   res.render('users/newUser')
 })
-userRouter.get('/:userId/editUser', function(req, res) {
+userRouter.get('/:userId/editUser', function (req, res) {
   usersAPI.getUser(req.params.userId).then(user => {
-    res.render('users/editUser', {user})
-  })
-})
- 
-userRouter.get('/:userId', function(req, res) {
-  usersAPI.getUser(req.params.userId).then (user =>{
-    res.render('users/user', {user})
+    res.render('users/editUser', { user })
   })
 })
 
-userRouter.post('/', function(req, res){
-  usersAPI.addNewUser(req.body).then(() => {
-    res.redirect('/users');
+userRouter.get('/:userId', function (req, res) {
+  usersAPI.getUser(req.params.userId)
+  .then(user => {
+    res.render('users/user', { user })
   })
+  .catch(res.send)
+
 })
 
-userRouter.put('/:userId', function (req, res){
-  usersAPI.updateUser(req.params.userId, req.body).then (
-    () => {
+userRouter.post('/', function (req, res) {
+  usersAPI.addNewUser(req.body)
+    .then(() => {
       res.redirect('/users');
-  })
+    })
+    .catch(res.send)
+
 })
 
-userRouter.delete('/:userId', function(req, res) {
+userRouter.put('/:userId', function (req, res) {
+  console.log('userRouter req.params', req.params)
+  const {userId}= req.params
+  usersAPI.updateUser(userId, req.body)
+    .then(() => {
+      res.redirect('/users');
+    })
+    .catch((err) => res.send(err))
+})
+
+userRouter.delete('/:userId', function (req, res) {
   usersAPI.deleteUser(req.params.userId).then(res.redirect('/users'))
 })
 
