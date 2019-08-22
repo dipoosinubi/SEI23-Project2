@@ -17,6 +17,10 @@ const UserSchema = mongoose.Schema({
   Age: {
     type: Number,
     reuired: true
+  },
+  profilePicture:{
+    type: string,
+    default:'images/profile.png'
   }
 });
 
