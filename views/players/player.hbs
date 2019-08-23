@@ -1,0 +1,12 @@
+<div>
+    <p>Name: </p> {{player.name}}
+    <p>Jersey Number: </p>{{player.jersey}}
+    <p>Country of Origin: </p>{{player.origin}}
+    <p>Age: </p>{{player.age}}
+</div>
+
+<a href="/players/{{player._id}}/editUser">Edit User</a> 
+
+<form method="POST" and action="/players/{{player._id}}?_method=DELETE">
+   <input type="submit" value="Delete User"/>
+</form>

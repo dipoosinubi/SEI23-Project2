@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const sportAPI = require('../models/sport.js')
+const stadiumAPI = require('../models/stadium.js')
 
 /* Step 3 
  * 
@@ -25,47 +25,47 @@ const sportAPI = require('../models/sport.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const sportRouter = express.Router()
+const stadiumRouter = express.Router()
 
 /* Step 4
  * 
  * TODO: Put all request handlers here
  */
-sportRouter.get('/', function (req, res) {
-  sportAPI.getAllSports(). then(sports => {
-    res.render('sports/allSports', {sports})
+stadiumRouter.get('/', function (req, res) {
+  stadiumAPI.getAllStadiums(). then(stadiums => {
+    res.render('stadiums/allStadiums', {stadiums})
   })
 })
-sportRouter.get('/new', function(req, res) {
-  res.render('sports/newSport')
+stadiumRouter.get('/new', function(req, res) {
+  res.render('stadiums/newStadium')
 })
-sportRouter.get('/:sportId/editSport', function(req, res) {
-  sportAPI.getSport(req.params.sportId).then(sport => {
-    res.render('sports/editSport', {sport})
+stadiumRouter.get('/:stadiumId/editStadium', function(req, res) {
+  stadiumAPI.getStadium(req.params.stadiumId).then(stadium => {
+    res.render('stadiums/editStadium', {stadium})
   })
 })
  
-sportRouter.get('/:sportId', function(req, res) {
-  sportAPI.getSport(req.params.sportId).then (sport =>{
-    res.render('sports/sport', {sport})
+stadiumRouter.get('/:stadiumId', function(req, res) {
+  stadiumAPI.getStadium(req.params.stadiumId).then (stadium =>{
+    res.render('stadiums/stadium', {stadium})
   })
 })
 
-sportRouter.post('/', function(req, res){
-  sportAPI.addNewSport(req.body).then(() => {
-    res.redirect('/sports');
+stadiumRouter.post('/', function(req, res){
+  stadiumAPI.addNewStadium(req.body).then(() => {
+    res.redirect('/stadiums');
   })
 })
 
-sportRouter.put('/:sportId', function (req, res){
-  sportAPI.updateSport(req.params.sportId, req.body).then (
+stadiumRouter.put('/:stadiumId', function (req, res){
+  stadiumAPI.updateStadium(req.params.stadiumId, req.body).then (
     () => {
-      res.redirect('/sports');
+      res.redirect('/stadiums');
   })
 })
 
-sportRouter.delete('/:sportId', function(req, res) {
-  sportAPI.deleteSport(req.params.sportId).then(res.redirect('/sports'))
+stadiumRouter.delete('/:stadiumId', function(req, res) {
+  stadiumAPI.deleteStadium(req.params.stadiumId).then(res.redirect('/stadiums'))
 })
 
 
@@ -75,5 +75,5 @@ sportRouter.delete('/:sportId', function(req, res) {
  *
  */
 module.exports = {
-  sportRouter
+  stadiumRouter
 }

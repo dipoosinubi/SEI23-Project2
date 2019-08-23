@@ -1,0 +1,19 @@
+<form method="POST" action="/players/{{player._id}}?_method=PUT">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{player.name}}"/>
+
+    <label for="jersey">Jersey Numer</label>
+    <input type="number" name="jersey" value="{{player.jersey}}">
+
+    <label for="origin">Country of Origin</label>
+    <input type="text" name="origin" value="{{player.origin}}"/>
+
+    <label for="age">Age</label>
+    <input type="number"  name="age" value="{{player.age}}"/>
+
+     <input type="submit" value="Update Player" />
+</form>
+<form method="POST" action="/players/{{player._id}}?_method=DELETE">
+    <input type="submit" value="Delete Player" />
+</form>

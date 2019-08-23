@@ -1,0 +1,12 @@
+<h1>All Stadiums</h1>
+
+<a href="/stadiums/new">New Stadium</a>
+
+<ul> 
+    {{#each stadiums}}
+    <li>
+      <a href="/stadiums/{{_id}}">{{name}}</a>
+    </li>
+    {{!-- <a href="/stadiums/{{stadium._id}}/editSport">Edit Stadium</a>  --}}
+    {{/each}}
+</ul>
