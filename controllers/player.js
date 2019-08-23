@@ -31,20 +31,29 @@ const playerRouter = express.Router()
  * 
  * TODO: Put all request handlers here
  */
-playerRouter.get('/', function (req, res) {
+// GET PLAYERS BY TEAM
+playerRouter.get('/team/:teamId/', function (req, res) {
+  playerAPI.getPlayersByTeamId(req.params.teamId).then(player => {
+    res.render('players/player')
+  })
+})
+// GET ALL PLAYERS
+playerRouter.get('/all', function (req, res) {
   playerAPI.getAllPlayers().then(players => {
     res.render('players/allPlayers', { players })
   })
 })
-playerRouter.get('/new', function (req, res) {
+// CREATE PLAYER WITH TEAM ID
+playerRouter.get('/team/:teamId/new', function (req, res) {
   res.render('players/newPlayer')
 })
+// EDIT SINGLE PLAYER
 playerRouter.get('/:playerId/editPlayer', function (req, res) {
   playerAPI.getPlayer(req.params.playerId).then(player => {
     res.render('players/editPlayer', { player })
   })
 })
-
+// GET SINGLE PLAYER
 playerRouter.get('/:playerId', function (req, res) {
   playerAPI.getPlayer(req.params.playerId)
   .then(player => {
