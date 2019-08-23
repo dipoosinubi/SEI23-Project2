@@ -31,40 +31,53 @@ const stadiumRouter = express.Router()
  * 
  * TODO: Put all request handlers here
  */
-stadiumRouter.get('/', function (req, res) {
-  stadiumAPI.getAllStadiums(). then(stadiums => {
-    res.render('stadiums/allStadiums', {stadiums})
-  })
-})
-stadiumRouter.get('/new', function(req, res) {
-  res.render('stadiums/newStadium')
-})
-stadiumRouter.get('/:stadiumId/editStadium', function(req, res) {
-  stadiumAPI.getStadium(req.params.stadiumId).then(stadium => {
-    res.render('stadiums/editStadium', {stadium})
-  })
-})
- 
-stadiumRouter.get('/:stadiumId', function(req, res) {
-  stadiumAPI.getStadium(req.params.stadiumId).then (stadium =>{
-    res.render('stadiums/stadium', {stadium})
+
+//GET STADIUM BY TEAM
+stadiumRouter.get('/team/:teamId/', function (req, res) {
+  playerAPI.getStadiumsByTeamId(req.params.teamId).then(player => {
+    res.render('stadiums/stadium')
   })
 })
 
-stadiumRouter.post('/', function(req, res){
+//GET ALL STADIUMS
+stadiumRouter.get('/', function (req, res) {
+  stadiumAPI.getAllStadiums().then(stadiums => {
+    res.render('stadiums/allStadiums', { stadiums })
+  })
+})
+
+//CREATE STADIUM WITH TEAM ID
+stadiumRouter.get('/team/:teamId/new', function (req, res) {
+  res.render('stadiums/newStadium')
+})
+
+// EDIT SINGLE STADIUM
+stadiumRouter.get('/:stadiumId/editStadium', function (req, res) {
+  stadiumAPI.getStadium(req.params.stadiumId).then(stadium => {
+    res.render('stadiums/editStadium', { stadium })
+  })
+})
+// GET SINGLE STADIUM
+stadiumRouter.get('/:stadiumId', function (req, res) {
+  stadiumAPI.getStadium(req.params.stadiumId).then(stadium => {
+    res.render('stadiums/stadium', { stadium })
+  })
+})
+// POST SINGLE STADIUM
+stadiumRouter.post('/', function (req, res) {
   stadiumAPI.addNewStadium(req.body).then(() => {
     res.redirect('/stadiums');
   })
 })
-
-stadiumRouter.put('/:stadiumId', function (req, res){
-  stadiumAPI.updateStadium(req.params.stadiumId, req.body).then (
+//UPDATE SINGLE STADIUM
+stadiumRouter.put('/:stadiumId', function (req, res) {
+  stadiumAPI.updateStadium(req.params.stadiumId, req.body).then(
     () => {
       res.redirect('/stadiums');
-  })
+    })
 })
-
-stadiumRouter.delete('/:stadiumId', function(req, res) {
+// DELETE SINGLE STADIUM
+stadiumRouter.delete('/:stadiumId', function (req, res) {
   stadiumAPI.deleteStadium(req.params.stadiumId).then(res.redirect('/stadiums'))
 })
 
