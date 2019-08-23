@@ -2,10 +2,10 @@
     
     <p>Name: </p> {{stadium.name}}
     <p>Location: </p>{{stadium.location}}
-    <p>NUmber Of Seats: </p>{{stadium.location}}
+    <p>NUmber Of Seats: </p>{{stadium.seats}}
 </div>
 
-<a href="/stadiums/{{stadium._id}}/editStadiums">Edit Stadium</a> 
+<a href="/stadiums/{{stadium._id}}/editStadium">Edit Stadium</a> 
 
 <form method="POST" and action="/stadiums/{{stadium._id}}?_method=DELETE">
    <input type="submit" value="Delete Stadium"/>
