@@ -36,7 +36,7 @@ stadiumRouter.get('/', function (req, res) {
     res.render('stadiums/allStadiums', {stadiums})
   })
 })
-stadiumRouter.get('/teams/:teamId/new', function(req, res) {
+stadiumRouter.get('/new', function(req, res) {
   res.render('stadiums/newStadium')
 })
 stadiumRouter.get('/:stadiumId/editStadium', function(req, res) {
