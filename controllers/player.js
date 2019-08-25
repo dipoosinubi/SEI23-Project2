@@ -32,15 +32,15 @@ const playerRouter = express.Router({ mergeParams: true})
  * TODO: Put all request handlers here
  */
 // GET PLAYERS BY TEAM
-playerRouter.get('/team/:teamId/', function (req, res) {
-  playerAPI.getPlayersByTeamId(req.params.teamId).then(player => {
-    res.render('players/player')
-  })
-})
+// playerRouter.get('/', function (req, res) {
+//   playerAPI.getPlayersByTeamId(req.params.teamId).then(player => {
+//     res.render('players/player')
+//   })
+// })
 // GET ALL PLAYERS
-playerRouter.get('/all', function (req, res) {
+playerRouter.get('/', function (req, res) {
   playerAPI.getAllPlayers().then(players => {
-    res.render('players/allPlayers', { players })
+    res.render('teams/allTeams', { players })
   })
 })
 // CREATE PLAYER WITH TEAM ID
@@ -73,13 +73,10 @@ playerRouter.post('/', function (req, res) {
 })
 // UPDATE SINGLE PLAYER
 playerRouter.put('/:playerId', function (req, res) {
-  console.log('playerRouter req.params', req.params)
-  const { playerId } = req.params
-  playerAPI.updatePlayer(playerId, req.body)
+  playerAPI.updatePlayer(req.params.playerId, req.body)
     .then(() => {
       res.redirect('/players');
     })
-    .catch((err) => res.send(err))
 })
 //DELETE SINGLE PLAYER
 playerRouter.delete('/:playerId', function (req, res) {
