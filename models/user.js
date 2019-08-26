@@ -1,6 +1,6 @@
 const mongoose = require('./connection.js')
 
-const userSchema = mongoose.Schema ({
+const UserSchema = mongoose.Schema ({
   name: String,
   city: String,
   state: String,
