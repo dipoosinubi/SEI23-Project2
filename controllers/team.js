@@ -32,39 +32,44 @@ const teamRouter = express.Router()
  * 
  * TODO: Put all request handlers here
  */
+
+ //GET ALL TEAMS
 teamRouter.get('/', function (req, res) {
   teamsAPI.getAllTeams(). then(teams => {
     res.render('teams/allTeams', {teams})
   })
 })
+
+// CREATE NEW TEAM
 teamRouter.get('/new', function(req, res) {
   res.render('teams/newTeam')
 })
+// EDIT TEAM
 teamRouter.get('/:teamId/editTeam', function(req, res) {
   teamsAPI.getTeam(req.params.teamId).then(team => {
     res.render('teams/editTeam', {team})
   })
 })
- 
+//  GET SINGLE TEAM
 teamRouter.get('/:teamId', function(req, res) {
   teamsAPI.getTeam(req.params.teamId).then (team =>{
     res.render('teams/team', {team})
   })
 })
-
+// POST NEW TEAM
 teamRouter.post('/', function(req, res){
   teamsAPI.addNewTeam(req.body).then(() => {
     res.redirect('/teams');
   })
 })
-
+// UPDATE NEW TEAM
 teamRouter.put('/:teamId', function (req, res){
   teamsAPI.updateTeam(req.params.teamId, req.body).then (
     () => {
       res.redirect('/teams');
   })
 })
-
+//DELETE TEAM
 teamRouter.delete('/:teamId', function(req, res) {
   teamsAPI.deleteTeam(req.params.teamId).then(res.redirect('/teams'))
 })
