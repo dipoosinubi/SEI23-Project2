@@ -16,7 +16,7 @@ const express = require('express')
  * 
  */
 const playerAPI = require('../models/player.js')
-const teamsAPI = require('../models/team.js')
+
 /* Step 3 
  * 
  * Create a new router.
@@ -32,15 +32,15 @@ const playerRouter = express.Router({ mergeParams: true})
  * TODO: Put all request handlers here
  */
 // GET PLAYERS BY TEAM
-// playerRouter.get('/', function (req, res) {
-//   playerAPI.getPlayersByTeamId(req.params.teamId).then(player => {
-//     res.render('players/player')
-//   })
-// })
+playerRouter.get('/team/:teamId/', function (req, res) {
+  playerAPI.getPlayersByTeamId(req.params.teamId).then(player => {
+    res.render('players/player', { player})
+  })  
+})
 // GET ALL PLAYERS
 playerRouter.get('/', function (req, res) {
   playerAPI.getAllPlayers().then(players => {
-    res.render('teams/allTeams', { players })
+    res.render('players/allPlayers', { players })
   })
 })
 // CREATE PLAYER WITH TEAM ID
