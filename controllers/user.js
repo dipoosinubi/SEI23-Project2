@@ -6,3 +6,9 @@ const userAPI = require('../models/user.js')
 
 
 const userRouter = express.Router()
+
+//GET ALL USERS
+
+module.exports = {
+    userRouter
+  }
