@@ -25,35 +25,44 @@ const playerAPI = require('../models/player.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const playerRouter = express.Router()
+const playerRouter = express.Router({ mergeParams: true})
 
 /* Step 4
  * 
  * TODO: Put all request handlers here
  */
+// GET PLAYERS BY TEAM
+playerRouter.get('/team/:teamId/', function (req, res) {
+  playerAPI.getPlayersByTeamId(req.params.teamId).then(player => {
+    res.render('players/player', { player})
+  })  
+})
+// GET ALL PLAYERS
 playerRouter.get('/', function (req, res) {
   playerAPI.getAllPlayers().then(players => {
     res.render('players/allPlayers', { players })
   })
 })
-playerRouter.get('/new', function (req, res) {
+// CREATE PLAYER WITH TEAM ID
+playerRouter.get('/team/:teamId/new', function (req, res) {
   res.render('players/newPlayer')
 })
+// EDIT SINGLE PLAYER
 playerRouter.get('/:playerId/editPlayer', function (req, res) {
   playerAPI.getPlayer(req.params.playerId).then(player => {
     res.render('players/editPlayer', { player })
   })
 })
-
+// GET SINGLE PLAYER
 playerRouter.get('/:playerId', function (req, res) {
   playerAPI.getPlayer(req.params.playerId)
-  .then(player => {
-    res.render('players/player', { player })
-  })
-  .catch(res.send)
+    .then(player => {
+      res.render('players/player', { player })
+    })
+    .catch(res.send)
 
 })
-
+// POST SINGLE PLAYER
 playerRouter.post('/', function (req, res) {
   playerAPI.addNewPlayer(req.body)
     .then(() => {
@@ -62,17 +71,14 @@ playerRouter.post('/', function (req, res) {
     .catch(res.send)
 
 })
-
+// UPDATE SINGLE PLAYER
 playerRouter.put('/:playerId', function (req, res) {
-  console.log('playerRouter req.params', req.params)
-  const {playerId}= req.params
-  playerAPI.updatePlayer(playerId, req.body)
+  playerAPI.updatePlayer(req.params.playerId, req.body)
     .then(() => {
       res.redirect('/players');
     })
-    .catch((err) => res.send(err))
 })
-
+//DELETE SINGLE PLAYER
 playerRouter.delete('/:playerId', function (req, res) {
   playerAPI.deletePlayer(req.params.playerId).then(res.redirect('/players'))
 })

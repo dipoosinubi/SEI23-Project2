@@ -1,6 +1,6 @@
 <h1>All Teams</h1>
 
-<a href="/teams/new">New Team</a>
+<a href="/users/{{user._id}}/newTeam">New Team</a>
 
 <ul> 
     {{#each teams}}
@@ -9,3 +9,16 @@
     </li>
     {{/each}}
 </ul>
+
+{{!-- <h1>All Players</h1>
+
+<a href="/players/new">New Player</a>
+
+<div> 
+    {{#each players}}
+    <form>
+      <a href="/players/{{_id}}">{{name}}</a>
+    
+    </form>
+    {{/each}}
+</div> --}}

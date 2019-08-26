@@ -1,0 +1,13 @@
+<div>
+    
+    <p>Name: </p> {{user.name}}
+    <p>City: </p>{{user.city}}
+    <p>State: </p>{{user.state}}
+    <p>Age: </p>{{user.age}}
+</div>
+
+<a href="/users/{{user._id}}/editUser">Edit User</a> 
+
+<form method="POST" and action="/users/{{user._id}}?_method=DELETE">
+   <input type="submit" value="Delete User"/>
+</form>
