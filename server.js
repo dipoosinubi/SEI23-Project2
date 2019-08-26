@@ -20,6 +20,7 @@ const hbs = require('hbs')
 const { playerRouter } = require('./controllers/player.js')
 const { teamRouter} = require('./controllers/team.js')
 const { stadiumRouter} = require('./controllers/stadium.js')
+const { homeRouter } = require('./controllers/home.js')
 
 
 /* Step 3
@@ -66,6 +67,7 @@ app.set('view engine', 'hbs')
 app.use('/players', playerRouter )
 app.use('/teams', teamRouter )
 app.use('/stadiums', stadiumRouter )
+app.use('/home', homeRouter )
 
 /* Step 5
  *
