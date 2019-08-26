@@ -6,6 +6,11 @@
     {{#each users}}
     <li>
       <a href="/users/{{_id}}">{{name}}</a>
+      {{city}}
+      {{state}}
+      {{age}}
+      <a href="/users/{{_id}}/editUser">Edit User</a> 
+      <a href="/users/{{_id}}/teams">Get Teams</a>
     </li>
     {{/each}}
 </ul>
