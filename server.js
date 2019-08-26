@@ -17,9 +17,7 @@ const hbs = require('hbs')
  * import routers from controllers/
  *
  */
-const { playerRouter } = require('./controllers/player.js')
-const { teamRouter} = require('./controllers/team.js')
-const { stadiumRouter} = require('./controllers/stadium.js')
+const { userRouter } = require('./controllers/user.js')
 
 
 /* Step 3
@@ -63,9 +61,7 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/players', playerRouter)
-app.use('/teams', teamRouter )
-app.use('/stadiums', stadiumRouter )
+app.use('/user', userRouter)
 
 /* Step 5
  *
