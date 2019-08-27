@@ -13,7 +13,7 @@ The goal of this project was to recreate the popular soccer application 'FotMob'
 
 
 ## ERD
-!["ERD"](https://github.com/dipoosinubi/SEI23-Project2/blob/master/fotmob%20ERD.xml)
+!["ERD"]()
 
 
 ## Technologies Used
