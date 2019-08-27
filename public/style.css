@@ -1,32 +1,31 @@
 p {
-    font-size: 40px
+    font-size: 25px
 }
-.parallax1 {
+li {
+    font-size: 25px
+}
+a {
+    font-size: 25px
+}
+body, html {
+    height: 100%;
+    /* background: rgba(0,0,0,0.2); */
+  }
+
+.parallax {
     /* The image used */
     background-image: url("images/parallax1.jpg");
   
     /* Set a specific height */
-    min-height: 300px; 
+    height: 40%; 
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat; 
     background-size: cover;
   }
-  .parallax2 {
-    /* The image used */
-    background-image: url("images/parallax2.jpeg");
   
-    /* Set a specific height */
-    min-height: 300px; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    background-size: cover;
-  }
   @media only screen and (max-device-width: 1366px) {
     .parallax {
       background-attachment: scroll;
