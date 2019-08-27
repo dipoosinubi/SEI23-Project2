@@ -26,3 +26,6 @@ The goal of this project was to recreate the popular soccer application 'FotMob'
 - Express, Mongoose, NodeJs
 - JavaScript, Handlebars, CSS
 
+## FUTURE IMPOROVEMENTS
+- Create link between the clubs and stadiums
+- 
