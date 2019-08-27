@@ -1,18 +1,15 @@
 <h1>List of Premier League Clubs </h1>
 
 <p>The following is a list of clubs who have played in the Premier League since its formation in 1992 to the current
-season. As of the 2018–19 season, 49 teams have played in the Premier League.</p>
+  season. As of the 2018–19 season, 49 teams have played in the Premier League.</p>
 
-
-<ul>
-  {{#each teams}}
-  <li>
-    <a href="/teams/{{_id}}">{{name}}</a>
-  </li>
-  {{/each}}
-</ul>
-
-
-<a href="/teams/new">Add New Team</a><br>
-
-<a href="/home">Home</a>
+<p>To add to this list, click here <a href="/teams/new">Add New Team</a> </p><br>
+<div>
+  <ul>
+    {{#each teams}}
+    <li>
+      <a href="/teams/{{_id}}">{{name}}</a>
+    </li>
+    {{/each}}
+  </ul>
+</div>
