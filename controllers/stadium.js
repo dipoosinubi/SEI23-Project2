@@ -31,39 +31,42 @@ const stadiumRouter = express.Router()
  * 
  * TODO: Put all request handlers here
  */
+// GET ALL STATDIUMS
 stadiumRouter.get('/', function (req, res) {
   stadiumAPI.getAllStadiums(). then(stadiums => {
     res.render('stadiums/allStadiums', {stadiums})
   })
 })
+// CREATE NEW STADIUM
 stadiumRouter.get('/new', function(req, res) {
   res.render('stadiums/newStadium')
 })
+// EDIT STADIUM
 stadiumRouter.get('/:stadiumId/editStadium', function(req, res) {
   stadiumAPI.getStadium(req.params.stadiumId).then(stadium => {
     res.render('stadiums/editStadium', {stadium})
   })
 })
- 
+//  GET SINGLE STADIUM
 stadiumRouter.get('/:stadiumId', function(req, res) {
   stadiumAPI.getStadium(req.params.stadiumId).then (stadium =>{
     res.render('stadiums/stadium', {stadium})
   })
 })
-
+// ADD NEW STADIUM
 stadiumRouter.post('/', function(req, res){
   stadiumAPI.addNewStadium(req.body).then(() => {
     res.redirect('/stadiums');
   })
 })
-
+// UPDATE STADIUM
 stadiumRouter.put('/:stadiumId', function (req, res){
   stadiumAPI.updateStadium(req.params.stadiumId, req.body).then (
     () => {
       res.redirect('/stadiums');
   })
 })
-
+// DELETE STADIUM
 stadiumRouter.delete('/:stadiumId', function(req, res) {
   stadiumAPI.deleteStadium(req.params.stadiumId).then(res.redirect('/stadiums'))
 })

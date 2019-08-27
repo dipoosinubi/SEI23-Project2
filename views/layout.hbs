@@ -14,10 +14,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="/style.css">
 
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/home" class="brand-logo">🏠 </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/teams/">Teams</a></li>
+          <li><a href="/players/">Players</a></li>
+          <li><a href="/stadiums/">Stadiums</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </head>
 
 <body>
-  <div class="parallax"></div>
+  <div class="parallax1"></div>
   <div class="container">
     <!--
       This is a place holder for the contents of the .hbs file that is
@@ -25,7 +37,7 @@
     -->
     {{{body}}}
   </div>
-  <div class="parallax"></div>
+  <div class="parallax2"></div>
 </body>
 
 </html>

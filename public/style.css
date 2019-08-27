@@ -8,18 +8,21 @@ a {
     font-size: 25px
 }
 body, html {
-    height: 100%;
-    /* background: rgba(0,0,0,0.2); */
+    height: 80%;
   }
 
-.parallax {
-    /* The image used */
+  .parallax1 {
+    background-image: url("images/background.jpg");
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+  }
+
+.parallax2 {
     background-image: url("images/parallax1.jpg");
-  
-    /* Set a specific height */
-    height: 40%; 
-  
-    /* Create the parallax scrolling effect */
+    height: 100%; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat; 

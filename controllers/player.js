@@ -31,20 +31,26 @@ const playerRouter = express.Router()
  * 
  * TODO: Put all request handlers here
  */
+
+// GET ALL PLAYERS
 playerRouter.get('/', function (req, res) {
   playerAPI.getAllPlayers().then(players => {
     res.render('players/allPlayers', { players })
   })
 })
+
+// CREATE NEW PLAYER
 playerRouter.get('/new', function (req, res) {
   res.render('players/newPlayer')
 })
+
+// EDIT PLAYER
 playerRouter.get('/:playerId/editPlayer', function (req, res) {
   playerAPI.getPlayer(req.params.playerId).then(player => {
     res.render('players/editPlayer', { player })
   })
 })
-
+// GET SINGLE PLAYER
 playerRouter.get('/:playerId', function (req, res) {
   playerAPI.getPlayer(req.params.playerId)
   .then(player => {
@@ -53,7 +59,7 @@ playerRouter.get('/:playerId', function (req, res) {
   .catch(res.send)
 
 })
-
+// ADD NEW PLAYER
 playerRouter.post('/', function (req, res) {
   playerAPI.addNewPlayer(req.body)
     .then(() => {
@@ -62,9 +68,8 @@ playerRouter.post('/', function (req, res) {
     .catch(res.send)
 
 })
-
+// UPDATE PLAYER
 playerRouter.put('/:playerId', function (req, res) {
-  console.log('playerRouter req.params', req.params)
   const {playerId}= req.params
   playerAPI.updatePlayer(playerId, req.body)
     .then(() => {
@@ -72,7 +77,7 @@ playerRouter.put('/:playerId', function (req, res) {
     })
     .catch((err) => res.send(err))
 })
-
+// DELETE PLAYER
 playerRouter.delete('/:playerId', function (req, res) {
   playerAPI.deletePlayer(req.params.playerId).then(res.redirect('/players'))
 })
