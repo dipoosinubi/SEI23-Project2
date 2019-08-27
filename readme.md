@@ -11,6 +11,10 @@ The goal of this project was to recreate the popular soccer application 'FotMob'
 (MongoDD, Express Handlebars and NodeJs).
 
 ## Wireframe
+!["WIREFRAME"](https://github.com/dipoosinubi/SEI23-Project2/blob/master/homepage.png)
+!["WIREFRAME"](https://github.com/dipoosinubi/SEI23-Project2/blob/master/playersPage.png)
+!["WIREFRAME"](https://github.com/dipoosinubi/SEI23-Project2/blob/master/teamsPage.png)
+!["WIREFRAME"](https://github.com/dipoosinubi/SEI23-Project2/blob/master/stadiumPage.png)
 
 
 
