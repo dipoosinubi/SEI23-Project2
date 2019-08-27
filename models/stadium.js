@@ -2,8 +2,9 @@ const mongoose = require('./connection.js')
 
 const StadiumSchema = mongoose.Schema ({
   name: String,
+  club: String,
   location: String,
-  seats: Number,
+  capacity: Number,
 });
 
 const StadiumCollection = mongoose.model('stadium', StadiumSchema);
