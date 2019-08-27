@@ -1,12 +1,18 @@
 <h1>All Stadiums</h1>
 
-<a href="/stadiums/new">New Stadium</a>
+<p>
+Since the inception of the Premier League, England's highest level of association football annual 
+league tournament, 59 football stadiums have been used to host matches.</p>
+
+<p>Below is a list of stadiums that are currently being used to host matches in the EPL</p>
+
+<p>To add to this list, click here <a href="/stadiums/new"> Add New Stadium</a></p><br>
 
 <ul> 
     {{#each stadiums}}
     <li>
       <a href="/stadiums/{{_id}}">{{name}}</a>
     </li>
-    {{!-- <a href="/stadiums/{{stadium._id}}/editSport">Edit Stadium</a>  --}}
     {{/each}}
 </ul>
+

@@ -1,13 +1,20 @@
+<h1>EDIT TEAM INFORMATION</h1>
+
+<P>Please add new team information in the input field below.</P>
+
 <form method="POST" action="/teams/{{team._id}}?_method=PUT">
 
     <label for="name">Name</label>
     <input type="text" name="name" value="{{team.name}}"/>
 
-    <label for="leauge">League</label>
-    <input type="text" name="leauge" value="{{team.league}}"/>
+    <label for="coach">Coach</label>
+    <input type="text" name="coach" value="{{team.coach}}"/>
 
-    <label for="country">Country</label>
-    <input type="text"  name="country" value="{{team.country}}"/>
+    <label for="stadium">Stadium</label>
+    <input type="text"  name="stadium" value="{{team.stadium}}"/>
+
+    <label for="trophies">Number of Trophies won</label>
+    <input type="number" name="trophies" value="{{team.trophies}}">
 
      <input type="submit" value="Update Team" />
 </form>

@@ -10,13 +10,26 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GA Report</title>
+  <title>SoccerMob</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="/style.css">
 
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/home" class="brand-logo">🏠 SoccerMob</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/teams/">TEAMS</a></li>
+          <li><a href="/players/">PLAYERS</a></li>
+          <li><a href="/stadiums/">STADIUMS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </head>
 
 <body>
+  <div class="parallax1"></div>
   <div class="container">
     <!--
       This is a place holder for the contents of the .hbs file that is
@@ -24,6 +37,7 @@
     -->
     {{{body}}}
   </div>
+  <div class="parallax2"></div>
 </body>
 
 </html>

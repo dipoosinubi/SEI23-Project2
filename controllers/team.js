@@ -16,7 +16,6 @@ const express = require('express')
  * 
  */
 const teamsAPI = require('../models/team.js')
-
 //  
 
 /* Step 3 
@@ -36,7 +35,7 @@ const teamRouter = express.Router()
 
  //GET ALL TEAMS
 teamRouter.get('/', function (req, res) {
-  teamsAPI.getAllTeams().then(teams => {
+  teamsAPI.getAllTeams(). then(teams => {
     res.render('teams/allTeams', {teams})
   })
 })

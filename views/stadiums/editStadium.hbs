@@ -1,17 +1,24 @@
+<h1>EDIT STADIUM INFORMATION</h1>
+
+<P>Please add new stadium information in the input field below.</P>
+
 <form method="POST" action="/stadiums/{{stadium._id}}?_method=PUT">
 
     <label for="name">Name</label>
     <input type="text" name="name" value="{{stadium.name}}"/>
+     
+    <label for="club">Club</label>
+    <input type="text" name="club" value="{{stadium.club}}"/>
 
     <label for="location">Location</label>
     <input type="text" name="location" value="{{stadium.location}}"/>
 
-    <label for="seats">Number Of Seats</label>
-    <input type="number" name="seats" value="{{stadium.location}}"/>
+    <label for="capacity">Capacity</label>
+    <input type="number" name="capacity" value="{{stadium.capacity}}"/>
 
 
      <input type="submit" value="Update Stadium" />
 </form>
-<form method="POST" action="/stadium/{{stadium._id}}?_method=DELETE">
+<form method="POST" action="/stadiums/{{stadium._id}}?_method=DELETE">
     <input type="submit" value="Delete stadium" />
 </form>

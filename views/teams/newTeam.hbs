@@ -1,13 +1,19 @@
-<form method="POST" action="/{{user._id}}/teams">
+<h1>ADD TEAM INFORMATION</h1>
+<P>Please add new team information in the input field below.</P>
+
+<form method="POST" action="/teams">
 
     <label for="name">Name</label>
     <input type="text" name="name"/>
 
-    <label for="league">League</label>
-    <input type="text" name="league"/>
+    <label for="coach">Coach</label>
+    <input type="text" name="coach"/>
 
-    <label for="country">Country</label>
-    <input type="text"  name="country"/>
+    <label for="stadium">Stadium</label>
+    <input type="text"  name="stadium"/>
+
+    <label for="trophies">Trophies Won</label>
+    <input type="number" name="trophies">
 
 
     <input type="submit" value="Create Team" />

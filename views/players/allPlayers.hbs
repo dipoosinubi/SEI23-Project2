@@ -1,12 +1,15 @@
-<h1>All Players</h1>
+<h1>Notable Premier League Players</h1>
 
-<a href="/users/{{user._id}}/newPlayer">New Team</a>
+<p>This is a list of notable Premier League players, some of whom have made 300 or more appearances. </p>
+<p>Stanley Matthews, Denis Law, Sir Bobby Charlton, George Best, Michael Owen,and Cristiano Ronaldo have all won the Ballon D'or
+  while playing in the EPL
+</p>
 
-<div> 
-    {{#each players}}
-    <form>
-      <a href="/players/{{_id}}">{{name}}</a>
-  
-    </form>
-    {{/each}}
+<p>To add to this list, click here <a href="/players/new">Add New Player</a></p><br>
+<div>
+  {{#each players}}
+  <form>
+    <a href="/players/{{_id}}">{{name}}</a>
+  </form>
+  {{/each}}
 </div>
