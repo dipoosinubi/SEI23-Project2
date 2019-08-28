@@ -26,6 +26,10 @@ body, html {
 .grey-text {
   margin-right: 30px;
 }
+input:focus {
+  background-color: #EE6E73;
+}
+
   
   
   @media only screen and (max-device-width: 1366px) {
