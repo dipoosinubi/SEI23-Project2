@@ -1,8 +1,5 @@
-p {
-    font-size: 25px
-}
 
-a, label,input, li {
+a, label,input, li, p {
     font-size: 25px
 }
 body, html {
